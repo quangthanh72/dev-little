@@ -91,7 +91,7 @@ import {
                   placeholder="Repeat password"
                   autoCorrect={false}
                   secureTextEntry={true}
-                  textContentType="repeatPassword"
+                  textContentType="repeatpassword"
                   style={{ fontSize: 18 }}
                   onChangeText={handleChange("password")}
                   onBlur={handleBlur("password")}
