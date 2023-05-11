@@ -6,12 +6,14 @@ import {
   TouchableOpacity,
   Alert
 } from "react-native";
+// import { firebase } from "../../firebase";
 import React, { useState } from "react";
 import { TextInput } from "react-native-gesture-handler";
 
 import { Formik } from "formik";
 import * as Yup from "yup";
 import Validator from "email-validator";
+import Another from "./Another";
 
 const LoginForm = ({navigation}) => {
   const LoginFormSchema = Yup.object().shape({
@@ -35,7 +37,7 @@ const LoginForm = ({navigation}) => {
       <Formik
         initialValues={{ email: "", password: "" }}
         onSubmit={(values) => {
-          onLogin(values.email, values.password);
+          console.log('bruh');
         }}
         validationSchema={LoginFormSchema}
         validateOnMount={true}
@@ -55,7 +57,7 @@ const LoginForm = ({navigation}) => {
             >
               <TextInput
                 placeholderTextColor="#444"
-                placeholder="Phone number, username or email"
+                placeholder="Email"
                 autoCapitalize="none"
                 keyboardType="email-address"
                 textContentType="emailAddress"
@@ -94,6 +96,9 @@ const LoginForm = ({navigation}) => {
                 Log In
               </Text>
             </Pressable>
+            
+              <Another/>
+
             <View style={styles.signUpContainer}>
               <Text>Don't have an account?</Text>
               <TouchableOpacity onPress={() => navigation.push('SignupScreen')}>
@@ -114,7 +119,7 @@ const styles = StyleSheet.create({
   },
 
   inputField: {
-    borderRadius: 4,
+    borderRadius: 12,
     padding: 12,
     backgroundColor: "#FAFAFA",
     marginBottom: 10,
@@ -126,7 +131,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     minHeight: 42,
-    borderRadius: 4,
+    borderRadius: 20,
   }),
   signUpContainer: {
     flexDirection: "row",

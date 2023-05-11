@@ -25,7 +25,7 @@ import {
     return (
       <View style={styles.wrapper}>
         <Formik
-          initialValues={{ email: "", username: "", password: "" }}
+          initialValues={{ email: "", username: "", password: "", repeatPassword: "" }}
           onSubmit={(values) => {
             console.log(values);
           }}
@@ -34,6 +34,19 @@ import {
         >
           {({ handleChange, handleBlur, handleSubmit, values, isValid }) => (
             <>
+              <View style={styles.inputField}>
+                <TextInput
+                  placeholderTextColor="#444"
+                  placeholder="Username"
+                  autoCapitalize="none"
+                  textContentType="username"
+                  style={{ fontSize: 18 }}
+                  onChangeText={handleChange("username")}
+                  onBlur={handleBlur("username")}
+                  value={values.username}
+                />
+              </View>
+              
               <View
                 style={[
                   styles.inputField,
@@ -47,7 +60,7 @@ import {
               >
                 <TextInput
                   placeholderTextColor="#444"
-                  placeholder="Phone number, username or email"
+                  placeholder="Email"
                   autoCapitalize="none"
                   keyboardType="email-address"
                   textContentType="emailAddress"
@@ -58,18 +71,7 @@ import {
                   value={values.email}
                 />
               </View>
-              <View style={styles.inputField}>
-                <TextInput
-                  placeholderTextColor="#444"
-                  placeholder="Username"
-                  autoCapitalize="none"
-                  textContentType="username"
-                  style={{ fontSize: 18 }}
-                  onChangeText={handleChange("username")}
-                  onBlur={handleBlur("username")}
-                  value={values.username}
-                />
-              </View>
+              
               <View style={styles.inputField}>
                 <TextInput
                   placeholderTextColor="#444"
@@ -77,6 +79,19 @@ import {
                   autoCorrect={false}
                   secureTextEntry={true}
                   textContentType="password"
+                  style={{ fontSize: 18 }}
+                  onChangeText={handleChange("password")}
+                  onBlur={handleBlur("password")}
+                  value={values.password}
+                />
+              </View>
+              <View style={styles.inputField}>
+                <TextInput
+                  placeholderTextColor="#444"
+                  placeholder="Repeat password"
+                  autoCorrect={false}
+                  secureTextEntry={true}
+                  textContentType="repeatPassword"
                   style={{ fontSize: 18 }}
                   onChangeText={handleChange("password")}
                   onBlur={handleBlur("password")}
@@ -113,7 +128,7 @@ import {
     },
   
     inputField: {
-      borderRadius: 4,
+      borderRadius: 12,
       padding: 12,
       backgroundColor: "#FAFAFA",
       marginBottom: 10,
@@ -125,7 +140,7 @@ import {
       alignItems: "center",
       justifyContent: "center",
       minHeight: 42,
-      borderRadius: 4,
+      borderRadius: 20,
       marginTop:50
     }),
     signUpContainer: {
