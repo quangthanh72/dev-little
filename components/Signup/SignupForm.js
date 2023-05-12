@@ -1,7 +1,6 @@
 import {
     View,
     Text,
-    Button,
     StyleSheet,
     Pressable,
     TouchableOpacity,
@@ -12,6 +11,7 @@ import {
   import { Formik } from "formik";
   import * as Yup from "yup";
   import Validator from "email-validator";
+import Another from "../Login/Another";
   
   const SignupForm = ({navigation}) => {
     const SignupFormSchema = Yup.object().shape({
@@ -25,7 +25,7 @@ import {
     return (
       <View style={styles.wrapper}>
         <Formik
-          initialValues={{ email: "", username: "", password: "", repeatPassword: "" }}
+          initialValues={{ email: "", username: "", password: "", repeatpassword: "" }}
           onSubmit={(values) => {
             console.log(values);
           }}
@@ -95,7 +95,7 @@ import {
                   style={{ fontSize: 18 }}
                   onChangeText={handleChange("password")}
                   onBlur={handleBlur("password")}
-                  value={values.password}
+                  value={values.repeatpassword}
                 />
               </View>
               
@@ -108,7 +108,10 @@ import {
                   Log In
                 </Text>
               </Pressable>
-              <View style={styles.signUpContainer}>
+
+                <Another/>
+
+              <View style={styles.logInContainer}>
                 <Text>Already have an account?</Text>
                 <TouchableOpacity onPress={() => navigation.push('LoginScreen')}>
                   <Text style={{ color: "#6BB0F5" }}> Log in</Text>
@@ -143,11 +146,11 @@ import {
       borderRadius: 20,
       marginTop:50
     }),
-    signUpContainer: {
+    logInContainer: {
       flexDirection: "row",
       width: "100%",
       justifyContent: "center",
-      marginTop: 50,
+
     },
   });
   
