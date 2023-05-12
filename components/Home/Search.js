@@ -1,17 +1,19 @@
-import { View, Text, StyleSheet, Image, TextInput } from "react-native";
+import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity } from "react-native";
 import React from "react";
 
-const Search = () => {
+const Search = ({navigation}) => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
         <View>
+          <TouchableOpacity onPress={() => navigation.push('StartScreen')}>
           <Image
             source={{
               uri: "https://us-tuna-sounds-images.voicemod.net/6a9b3c5d-3cf4-436f-b462-ffcd2f4154ac-1665671787017.jpg",
             }}
             style={styles.icon}
           />
+          </TouchableOpacity>
         </View>
         <View style={{backgroundColor:'white',borderRadius:15,width:270,height:35}}>
         <TextInput 

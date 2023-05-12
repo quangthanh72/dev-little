@@ -6,10 +6,10 @@ import Post from '../components/Home/Post'
 import BottomTab, {bottomTabIcons} from '../components/Home/BottomBar'
 import { ScrollView } from 'react-native-gesture-handler'
 
-const HomeScreen = () => {
+const HomeScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
-     <Search/>
+     <Search navigation={navigation}/>
      
      <LittleBook/>
      

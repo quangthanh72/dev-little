@@ -36,10 +36,10 @@ const Post = () => {
             />
           </TouchableOpacity>
         </View>
-      </View>
+      </View >
 
             <View>
-              <FlatList data={POSTS} renderItem={renderItem} numColumns={2} style={{height:435}} />
+              <FlatList data={POSTS} renderItem={renderItem} numColumns={2} style={{height:435,alignContent:'center'}} />
             </View>
     </View>
   );
@@ -66,10 +66,11 @@ const styles = StyleSheet.create({
     marginTop: 15,
   },
   container: {
-    width: 187,
-    height: 178,
-    margin: 10,
+    width: 180,
+    height: 170,
+    margin: 12,
     alignItems: "center",
+    alignContent:'center',
     backgroundColor: "#A8ABEB",
     shadowColor:'red',
     shadowOffset:{

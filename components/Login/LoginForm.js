@@ -37,7 +37,7 @@ const LoginForm = ({navigation}) => {
       <Formik
         initialValues={{ email: "", password: "" }}
         onSubmit={(values) => {
-          console.log('bruh');
+          console.log(values.email, values.password);
         }}
         validationSchema={LoginFormSchema}
         validateOnMount={true}
@@ -90,7 +90,8 @@ const LoginForm = ({navigation}) => {
             <Pressable
               titleSize={20}
               style={styles.button(isValid)}
-              onPress={handleSubmit}
+              // onPress={handleSubmit} 
+              onPress={() => navigation.push('HomeScreen')}
             >
               <Text style={{ color: "white", fontWeight: 500, fontSize: 20 }}>
                 Log In

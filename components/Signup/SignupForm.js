@@ -93,8 +93,8 @@ import Another from "../Login/Another";
                   secureTextEntry={true}
                   textContentType="repeatpassword"
                   style={{ fontSize: 18 }}
-                  onChangeText={handleChange("password")}
-                  onBlur={handleBlur("password")}
+                  onChangeText={handleChange("repeatpassword")}
+                  onBlur={handleBlur("repeatpassword")}
                   value={values.repeatpassword}
                 />
               </View>
@@ -102,7 +102,8 @@ import Another from "../Login/Another";
               <Pressable
                 titleSize={20}
                 style={styles.button(isValid)}
-                onPress={handleSubmit}
+                // onPress={handleSubmit}
+                onPress={()=> navigation.push('HomeScreen')}
               >
                 <Text style={{ color: "white", fontWeight: 500, fontSize: 20 }}>
                   Log In
