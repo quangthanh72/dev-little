@@ -6,7 +6,7 @@ import {
   TouchableOpacity,
   Alert
 } from "react-native";
-import { firebase } from "../../firebase";
+// import { firebase } from "../../firebase";
 import React, { useState } from "react";
 import { TextInput } from "react-native-gesture-handler";
 
